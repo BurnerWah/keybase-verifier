@@ -1,39 +1,10 @@
-# ʕ •́؈•̀) `worker-typescript-template`
+# Keybase Verifier Worker
 
-A batteries included template for kick starting a TypeScript Cloudflare worker project.
+This is the source code for the worker I use on most (but not all yet) of my sites to provide Keybase proofs.
+It's *very* simple, since it really only needs to 1 thing.
 
-## Note: You must use [wrangler](https://developers.cloudflare.com/workers/cli-wrangler/install-update) 1.17 or newer to use this template.
+It pulls the Keybase proof from an r2 store based on its hostname, and then returns that.
 
-## 🔋 Getting Started
+It only supports `/.well-known/keybase.txt`, though if you wanted to it would be very simple to add support for `/keybase.txt` as well.
 
-This template is meant to be used with [Wrangler](https://github.com/cloudflare/wrangler). If you are not already familiar with the tool, we recommend that you install the tool and configure it to work with your [Cloudflare account](https://dash.cloudflare.com). Documentation can be found [here](https://developers.cloudflare.com/workers/tooling/wrangler/).
-
-To generate using Wrangler, run this command:
-
-```bash
-wrangler generate my-ts-project https://github.com/cloudflare/worker-typescript-template
-```
-
-### 👩 💻 Developing
-
-[`src/index.ts`](./src/index.ts) calls the request handler in [`src/handler.ts`](./src/handler.ts), and will return the [request method](https://developer.mozilla.org/en-US/docs/Web/API/Request/method) for the given request.
-
-### 🧪 Testing
-
-This template comes with jest tests which simply test that the request handler can handle each request method. `npm test` will run your tests.
-
-### ✏️ Formatting
-
-This template uses [`prettier`](https://prettier.io/) to format the project. To invoke, run `npm run format`.
-
-### 👀 Previewing and Publishing
-
-For information on how to preview and publish your worker, please see the [Wrangler docs](https://developers.cloudflare.com/workers/tooling/wrangler/commands/#publish).
-
-## 🤢 Issues
-
-If you run into issues with this specific project, please feel free to file an issue [here](https://github.com/cloudflare/worker-typescript-template/issues). If the problem is with Wrangler, please file an issue [here](https://github.com/cloudflare/wrangler/issues).
-
-## ⚠️ Caveats
-
-The `service-worker-mock` used by the tests is not a perfect representation of the Cloudflare Workers runtime. It is a general approximation. We recommend that you test end to end with `wrangler dev` in addition to a [staging environment](https://developers.cloudflare.com/workers/tooling/wrangler/configuration/environments/) to test things before deploying.
+[This (brnr.link/.well-known/keybase.txt)](https://brnr.link/.well-known/keybase.txt) is an example attestation.
