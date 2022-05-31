@@ -1,9 +1,17 @@
-name = "worker-typescript-template"
+name = "keybase-verifier"
 type = "javascript"
 zone_id = ""
 account_id = ""
 route = ""
 workers_dev = true
+compatibility_date = "2022-05-31"
+
+
+[[r2_buckets]]
+binding = "ATTESTATIONS"
+bucket_name = "keybase-attestations"
+preview_bucket_name = "keybase-attestations"
+
 
 [build]
 command = "npm install && npm run build"
