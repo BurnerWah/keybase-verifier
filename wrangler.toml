@@ -1,3 +1,8 @@
 name = "keybase-verifier"
 main = "src/index.ts"
 compatibility_date = "2022-07-04"
+
+[[r2_buckets]]
+binding = "ATTESTATIONS"
+bucket_name = "keybase-attestations"
+preview_bucket_name = "keybase-attestations"
