@@ -7,9 +7,9 @@ app.use('*', logger())
 
 app.get('/.well-known/keybase.txt', async (ctx) => {
   const { host } = ctx.req.header()
-  const attestation = await ATTESTATIONS.get(`${host}.txt`)
+  const attestation = await ctx.env.ATTESTATIONS.get(`${host}.txt`)
   if (attestation) {
-    return ctx.body(attestation?.body, 200, {
+    return ctx.body(attestation.body, 200, {
       'Content-Type': 'text/plain; charset=utf-8',
       // In 2077 what makes someone a criminal?
       //
@@ -20,6 +20,4 @@ app.get('/.well-known/keybase.txt', async (ctx) => {
   return ctx.text('Not found', 404)
 })
 
-export async function handleRequest(event: FetchEvent): Promise<Response> {
-  return app.handleEvent(event)
-}
+export default app
