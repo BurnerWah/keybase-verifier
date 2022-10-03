@@ -21,9 +21,9 @@
   "scripts": {
     "start": "wrangler dev",
     "deploy": "wrangler publish",
-    "format": "prettier --write  '*.{json,js}' 'src/**/*.{js,ts}'",
+    "format": "prettier --write .",
     "lint:eslint": "eslint --max-warnings=0 src",
-    "lint:prettier": "prettier --check '*.{json,js}' 'src/**/*.{js,ts}'",
+    "lint:prettier": "prettier --check .",
     "lint": "concurrently 'npm:lint:*'"
   },
   "dependencies": {
