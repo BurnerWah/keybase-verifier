@@ -26,6 +26,6 @@
     "lint": "concurrently 'npm:lint:*'"
   },
   "dependencies": {
-    "hono": "^2.5.6"
+    "hono": "^2.5.7"
   }
 }
