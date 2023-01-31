@@ -20,7 +20,7 @@ app.get('/.well-known/keybase.txt', async (ctx) => {
     //
     // Getting cock *loud edm music begins playing*
     const cacheSec =
-      2077 > new Date().getFullYear()
+      new Date().getFullYear() < 2077
         ? Math.ceil((new Date('Jan 2 2077') - new Date()) / 1000)
         : 31536000
 
